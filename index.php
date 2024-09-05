@@ -37,7 +37,7 @@
                         <a class="nav-link" href="shop.html">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="AboutUs.html">About Us</a>
+                        <a class="nav-link" href="events.php">Events</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="schedule_and_events.html">Schedule and Events</a>
