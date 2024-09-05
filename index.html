@@ -10,34 +10,28 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <?php
-    // Load announcements from JSON file
-    $announcements = json_decode(file_get_contents('announcements.json'), true);
-    // Get the most recent announcement
-    $latest_announcement = end($announcements);
-    ?>
     <!-- Announcement Banner -->
-    <div class="alert alert-info text-center" role="alert">
-        <?php echo htmlspecialchars($latest_announcement['message']); ?>
+    <div id="announcement-banner" class="alert alert-info text-center" role="alert">
+        Loading announcement...
     </div>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.php">Casa Blanca Hookah Lounge</a>
+            <a class="navbar-brand" href="index.html">Casa Blanca Hookah Lounge</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="shop.html">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="events.php">Events</a>
+                        <a class="nav-link" href="AboutUs.html">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="schedule_and_events.html">Schedule and Events</a>
@@ -63,9 +57,29 @@
         <p></p>
     </center>
 
-    
+    <a href="https://www.facebook.com/chaoticgoodcoffee/events" target="_blank" class="d20-button">
+        <span><img src="Resources/d20.png" height="25" width="25"> Upcoming Events</span>
+    </a>
 
     </br>
     </br>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        fetch('announcements.json')
+            .then(response => response.json())
+            .then(data => {
+                const latestAnnouncement = data[data.length - 1];
+                document.getElementById('announcement-banner').innerText = latestAnnouncement.message;
+            })
+            .catch(error => {
+                console.error('Error fetching announcement:', error);
+                document.getElementById('announcement-banner').innerText = 'Failed to load announcement.';
+            });
+    </script>
 </body>
 </html>
