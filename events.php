@@ -2,6 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+<div id="video-container">
+    <video id="video" autoplay loop muted>
+        <source src="Resources/video.MOV" type="video/quicktime">
+        <!-- Add additional video formats (e.g., WebM, Ogg) if needed -->
+    </video>
+    
+    <div id="text-overlay">
+        <h1 class="overlay">Default Text About Us</h1>
+    </div>
+  </div>
+iv id="video-container">
+    <video id="video" autoplay loop muted>
+        <source src="Resources/video.MOV" type="video/quicktime">
+        <!-- Add additional video formats (e.g., WebM, Ogg) if needed -->
+    </video>
+    
+    <div id="text-overlay">
+        <h1 class="overlay">Default Text About Us</h1>
+    </div>
+  </div>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upcoming Events - Casa Blanca Hookah Lounge</title>
     <!-- Bootstrap CSS -->
