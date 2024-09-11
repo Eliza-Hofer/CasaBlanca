@@ -1,6 +1,11 @@
 /* index.css */
 /* index.css */
 
+.video-border {
+    border: 5px solid #000; /* Change the color and width as needed */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+}
+
 /* Center the entire page content */
 body {
     text-align: center;
