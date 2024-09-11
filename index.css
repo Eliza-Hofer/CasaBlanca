@@ -25,7 +25,8 @@ body {
 h1 {
     font-size: 50px;
     margin-bottom: 20px;
-    color: white;
+    color: rgb(56, 127, 197);
+    font-weight: 900;
 }
 
 h3 {
